@@ -17,3 +17,4 @@ for linha_texto in range(len(texto)):
     print(linha)
 
 #valida = re.findall('(INSERT|CREATE|ALTER|DROP|SELECT|DECLARE|INSERT\s+INTO|UPDATE\s+\S+\s+SET|DELETE\s+FROM|EXEC(UTE){0,1}|UNION(\s+ALL){0,1})\s', texto)
+#Novo teste
