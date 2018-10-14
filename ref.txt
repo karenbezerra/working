@@ -1,5 +1,4 @@
-(CREATE|ALTER|DROP|SELECT|DECLARE|INSERT\s+INTO|UPDATE\s+\S+\s+SET|DELETE\s+FROM|EXEC(UTE){0,1}|UNION(\s+ALL){0,1})\s
-
-
-	
-(SELECT\s[\w\*\)\(\,\s]+\sFROM\s[\w]+)| (UPDATE\s[\w]+\sSET\s[\w\,\'\=]+)| (INSERT\sINTO\s[\d\w]+[\s\w\d\)\(\,]*\sVALUES\s\([\d\w\'\,\)]+)| (DELETE\sFROM\s[\d\w\'\=]+)
+#Regex coleta insert: Group $2 will contain the table name, $4 the field list, and $6 the all of the value lists.
+(INSERT INTO\s+)([\w._]+)(\s+\()([\w+,?\s*]+)(\)\s+VALUES\s+)((\(['?\w\W+'?,?\s*]+\)\,?;?\s*)+)
+#Regex coleta update: Most useful will be group $2, the table name, group $4, the field=value list, and group $5, the WHERE clause.
+(UPDATE\s+)(\w+)\s+(SET)\s+([\w+\s*=\s*\w+,?\s*]+)\s+(WHERE.+)
